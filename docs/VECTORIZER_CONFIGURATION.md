@@ -660,17 +660,19 @@ var config = Configure.Vectors.Text2VecJinaAI(
 
 #### Text2VecVoyageAI
 
-VoyageAI embedding models.
+VoyageAI by MongoDB embedding models.
 
 ```csharp
 var config = Configure.Vectors.Text2VecVoyageAI(
     baseURL: null,
-    model: "voyage-large-2",
+    model: "voyage-4",
     truncate: false,
-    dimensions: 1536,
+    dimensions: 1024,
     vectorizeCollectionName: true
 ).New("default", "content");
 ```
+
+**Available models:** `voyage-4-large`, `voyage-4`, `voyage-4-lite`, `voyage-code-4`, `voyage-finance-2`, `voyage-law-2` (current generation). Legacy models such as `voyage-3.5`, `voyage-3.5-lite`, `voyage-3-large`, `voyage-code-3` and `voyage-multilingual-2` remain API-accessible. See <https://docs.voyageai.com/docs/embeddings> for the authoritative, up-to-date list.
 
 **Wire Format:** `text2vec-voyageai`
 **Type:** Single Vector
@@ -948,19 +950,21 @@ var config = Configure.Vectors.Multi2VecJinaAI(
 
 #### Multi2VecVoyageAI
 
-VoyageAI multi-modal embeddings.
+VoyageAI by MongoDB multi-modal embeddings.
 
 ```csharp
 var config = Configure.Vectors.Multi2VecVoyageAI(
     baseURL: null,
     imageFields: ["photo"],
-    model: "voyage-multimodal-3",
+    model: "voyage-multimodal-3.5",
     textFields: ["caption"],
     videoFields: ["video"],
     truncate: false,
     vectorizeCollectionName: true
 ).New("default");
 ```
+
+**Available models:** `voyage-multimodal-3.5` (current generation; adds video input support). The previous generation `voyage-multimodal-3` remains API-accessible. See <https://docs.voyageai.com/docs/multimodal-embeddings> for the authoritative, up-to-date list.
 
 **Wire Format:** `multi2vec-voyageai`
 **Type:** Single Vector

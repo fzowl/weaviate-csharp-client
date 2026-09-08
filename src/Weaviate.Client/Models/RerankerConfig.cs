@@ -128,7 +128,7 @@ public static class Reranker
     }
 
     /// <summary>
-    /// The voyage ai
+    /// The VoyageAI by MongoDB reranker configuration
     /// </summary>
     public record VoyageAI : IRerankerConfig
     {

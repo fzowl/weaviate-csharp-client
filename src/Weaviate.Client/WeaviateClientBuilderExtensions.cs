@@ -73,7 +73,7 @@ public static class WeaviateClientBuilderExtensions
     ) => builder.WithHeader("X-Huggingface-Api-Key", apiKey);
 
     /// <summary>
-    /// Adds the voyage ai using the specified builder
+    /// Adds the VoyageAI by MongoDB API key header using the specified builder
     /// </summary>
     /// <param name="builder">The builder</param>
     /// <param name="apiKey">The api key</param>
