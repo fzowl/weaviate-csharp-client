@@ -609,7 +609,7 @@ public static class Vectorizer
     }
 
     /// <summary>
-    /// The configuration for multi-media vectorization using the VoyageAI module.
+    /// The configuration for multi-media vectorization using the VoyageAI by MongoDB module.
     /// See the documentation for detailed usage.
     /// </summary>
     [Vectorizer("multi2vec-voyageai")]
@@ -1429,7 +1429,7 @@ public static class Vectorizer
     }
 
     /// <summary>
-    /// The configuration for text vectorization using the VoyageAI module.
+    /// The configuration for text vectorization using the VoyageAI by MongoDB module.
     /// See the documentation for detailed usage.
     /// </summary>
     [Vectorizer("text2vec-voyageai")]

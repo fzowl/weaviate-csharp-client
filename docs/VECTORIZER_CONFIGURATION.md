@@ -660,12 +660,12 @@ var config = Configure.Vectors.Text2VecJinaAI(
 
 #### Text2VecVoyageAI
 
-VoyageAI embedding models.
+VoyageAI by MongoDB embedding models.
 
 ```csharp
 var config = Configure.Vectors.Text2VecVoyageAI(
     baseURL: null,
-    model: "voyage-large-2",
+    model: "voyage-3.5",
     truncate: false,
     dimensions: 1536,
     vectorizeCollectionName: true
@@ -948,13 +948,13 @@ var config = Configure.Vectors.Multi2VecJinaAI(
 
 #### Multi2VecVoyageAI
 
-VoyageAI multi-modal embeddings.
+VoyageAI by MongoDB multi-modal embeddings.
 
 ```csharp
 var config = Configure.Vectors.Multi2VecVoyageAI(
     baseURL: null,
     imageFields: ["photo"],
-    model: "voyage-multimodal-3",
+    model: "voyage-multimodal-3.5",
     textFields: ["caption"],
     videoFields: ["video"],
     truncate: false,

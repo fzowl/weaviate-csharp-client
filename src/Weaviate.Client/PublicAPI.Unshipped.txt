@@ -1,1 +1,3 @@
 #nullable enable
+const Weaviate.Client.Models.Reranker.VoyageAI.Models.Rerank3 = "rerank-3" -> string!
+const Weaviate.Client.Models.Reranker.VoyageAI.Models.Rerank3Lite = "rerank-3-lite" -> string!
