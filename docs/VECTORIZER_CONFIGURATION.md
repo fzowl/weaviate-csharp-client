@@ -672,7 +672,7 @@ var config = Configure.Vectors.Text2VecVoyageAI(
 ).New("default", "content");
 ```
 
-**Available models:** `voyage-4-large`, `voyage-4`, `voyage-4-lite`, `voyage-code-4`, `voyage-finance-2`, `voyage-law-2` (current generation). Legacy models such as `voyage-3.5`, `voyage-3.5-lite`, `voyage-3-large`, `voyage-code-3` and `voyage-multilingual-2` remain API-accessible. See <https://docs.voyageai.com/docs/embeddings> for the authoritative, up-to-date list.
+**Available models:** `voyage-4-large`, `voyage-4`, `voyage-4-lite`, `voyage-code-4`, `voyage-finance-2`, `voyage-law-2` (current generation), plus the open-weight `voyage-4-nano`. Legacy models such as `voyage-3.5`, `voyage-3.5-lite`, `voyage-3-large`, `voyage-code-3` and `voyage-multilingual-2` remain API-accessible. See <https://docs.voyageai.com/docs/embeddings> for the authoritative, up-to-date list.
 
 **Wire Format:** `text2vec-voyageai`
 **Type:** Single Vector

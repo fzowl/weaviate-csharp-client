@@ -159,6 +159,16 @@ public static class Reranker
         public static class Models
         {
             /// <summary>
+            /// The rerank 3 (in preview)
+            /// </summary>
+            public const string Rerank3 = "rerank-3";
+
+            /// <summary>
+            /// The rerank 3 lite (in preview)
+            /// </summary>
+            public const string Rerank3Lite = "rerank-3-lite";
+
+            /// <summary>
             /// The rerank 25
             /// </summary>
             public const string Rerank25 = "rerank-2.5";
