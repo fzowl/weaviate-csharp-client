@@ -1,5 +1,7 @@
 #nullable enable
 const Weaviate.Client.Models.GenerativeConfig.DigitalOcean.TypeValue = "generative-digitalocean" -> string!
+const Weaviate.Client.Models.Reranker.VoyageAI.Models.Rerank3 = "rerank-3" -> string!
+const Weaviate.Client.Models.Reranker.VoyageAI.Models.Rerank3Lite = "rerank-3-lite" -> string!
 override sealed Weaviate.Client.Models.Generative.Providers.DigitalOcean.Equals(Weaviate.Client.Models.GenerativeProvider? other) -> bool
 override Weaviate.Client.Models.Generative.Providers.DigitalOcean.<Clone>$() -> Weaviate.Client.Models.Generative.Providers.DigitalOcean!
 override Weaviate.Client.Models.Generative.Providers.DigitalOcean.EqualityContract.get -> System.Type!

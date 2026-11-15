@@ -660,17 +660,26 @@ var config = Configure.Vectors.Text2VecJinaAI(
 
 #### Text2VecVoyageAI
 
-VoyageAI embedding models.
+Voyage AI by MongoDB embedding models.
 
 ```csharp
 var config = Configure.Vectors.Text2VecVoyageAI(
     baseURL: null,
-    model: "voyage-large-2",
+    model: "voyage-4",
     truncate: false,
-    dimensions: 1536,
+    dimensions: 1024,
     vectorizeCollectionName: true
 ).New("default", "content");
 ```
+
+**Models** (`model` is a free-form string; the Weaviate module sends it to the Voyage AI API as is):
+
+- `voyage-4-large`, `voyage-4`, `voyage-4-lite`, `voyage-code-4`, `voyage-3-large`, `voyage-3.5`, `voyage-3.5-lite`, `voyage-code-3`: default 1024 dimensions; `dimensions` can be `2048`, `1024`, `512` or `256` (Matryoshka); 32k token context.
+- `voyage-finance-2` (32k context) and `voyage-law-2` (16k context): fixed 1024 dimensions.
+
+See the [Voyage AI embeddings documentation](https://docs.voyageai.com/docs/embeddings) for the full and current list.
+
+**API key and host:** pass the key with `WithVoyageAI(apiKey)` (sent in the `X-Voyageai-Api-Key` header). Weaviate calls `https://api.voyageai.com/v1` unless `baseURL` is set. Voyage AI API keys that start with `al-` (created in MongoDB Atlas) use the host `https://ai.mongodb.com/v1`, so set `baseURL: "https://ai.mongodb.com/v1"` explicitly for those keys. `Configure.Reranker.VoyageAI` has no base URL setting.
 
 **Wire Format:** `text2vec-voyageai`
 **Type:** Single Vector
@@ -948,19 +957,21 @@ var config = Configure.Vectors.Multi2VecJinaAI(
 
 #### Multi2VecVoyageAI
 
-VoyageAI multi-modal embeddings.
+Voyage AI by MongoDB multi-modal embeddings.
 
 ```csharp
 var config = Configure.Vectors.Multi2VecVoyageAI(
     baseURL: null,
     imageFields: ["photo"],
-    model: "voyage-multimodal-3",
+    model: "voyage-multimodal-3.5",
     textFields: ["caption"],
     videoFields: ["video"],
     truncate: false,
     vectorizeCollectionName: true
 ).New("default");
 ```
+
+**Models:** `voyage-multimodal-3.5` (text, images and video) and `voyage-multimodal-3` (text and images only; `videoFields` is not supported). See the [Voyage AI multimodal embeddings documentation](https://docs.voyageai.com/docs/multimodal-embeddings).
 
 **Wire Format:** `multi2vec-voyageai`
 **Type:** Single Vector

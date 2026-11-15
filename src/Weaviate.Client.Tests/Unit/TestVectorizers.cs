@@ -611,6 +611,50 @@ public partial class VectorConfigListTests
     }
 
     /// <summary>
+    /// Tests that the Voyage AI vectorizers send an explicit base URL under <c>baseURL</c>,
+    /// the key the text2vec-voyageai and multi2vec-voyageai modules read. Any other casing
+    /// (e.g. <c>baseUrl</c>) is silently ignored by the server, which then calls its default host,
+    /// so a key that needs <c>https://ai.mongodb.com/v1</c> would fail.
+    /// </summary>
+    [Fact]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Performance",
+        "CA1869:Cache and reuse 'JsonSerializerOptions' instances",
+        Justification = "<Pending>"
+    )]
+    public void Test_VoyageAI_Vectorizers_Serialize_BaseURL_Under_The_Key_The_Module_Reads()
+    {
+        // Arrange
+        var text = Configure.Vector(
+            "default",
+            v => v.Text2VecVoyageAI(baseURL: "https://ai.mongodb.com/v1", model: "voyage-4")
+        );
+        var multi = Configure.Vector(
+            "default",
+            v =>
+                v.Multi2VecVoyageAI(
+                    textFields: ["caption"],
+                    baseURL: "https://ai.mongodb.com/v1",
+                    model: "voyage-multimodal-3.5"
+                )
+        );
+        var options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        };
+
+        // Act
+        var textJson = JsonSerializer.Serialize(text.Vectorizer?.ToDto() ?? default, options);
+        var multiJson = JsonSerializer.Serialize(multi.Vectorizer?.ToDto() ?? default, options);
+
+        // Assert
+        Assert.Contains("\"baseURL\":\"https://ai.mongodb.com/v1\"", textJson);
+        Assert.Contains("\"baseURL\":\"https://ai.mongodb.com/v1\"", multiJson);
+        Assert.DoesNotContain("\"baseUrl\"", textJson);
+        Assert.DoesNotContain("\"baseUrl\"", multiJson);
+    }
+
+    /// <summary>
     /// Tests that Multi2VecVoyageAI routes its three modalities' weights to their own keys.
     /// Video is the modality at risk here: it is the last <c>FromWeightedFields</c> parameter,
     /// so a positional third argument would land it in <c>audioFields</c>, which this module

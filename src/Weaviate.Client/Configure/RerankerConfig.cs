@@ -52,10 +52,10 @@ public class RerankerConfigFactory
         };
 
     /// <summary>
-    /// Creates a reranker configuration for VoyageAI.
+    /// Creates a reranker configuration for Voyage AI by MongoDB.
     /// </summary>
     /// <param name="model">The model to use.</param>
-    /// <returns>A new <see cref="IRerankerConfig"/> instance configured for VoyageAI.</returns>
+    /// <returns>A new <see cref="IRerankerConfig"/> instance configured for Voyage AI by MongoDB.</returns>
     public IRerankerConfig VoyageAI(string? model = null) =>
         new Reranker.VoyageAI { Model = model };
 
