@@ -609,7 +609,7 @@ public static class Vectorizer
     }
 
     /// <summary>
-    /// The configuration for multi-media vectorization using the VoyageAI module.
+    /// The configuration for multi-media vectorization using the Voyage AI by MongoDB module.
     /// See the documentation for detailed usage.
     /// </summary>
     [Vectorizer("multi2vec-voyageai")]
@@ -624,7 +624,7 @@ public static class Vectorizer
         /// <summary>
         /// Gets or sets the value of the base url
         /// </summary>
-        [JsonPropertyName("baseUrl")]
+        [JsonPropertyName("baseURL")]
         public string? BaseURL { get; set; } = null;
 
         /// <summary>
@@ -1429,7 +1429,7 @@ public static class Vectorizer
     }
 
     /// <summary>
-    /// The configuration for text vectorization using the VoyageAI module.
+    /// The configuration for text vectorization using the Voyage AI by MongoDB module.
     /// See the documentation for detailed usage.
     /// </summary>
     [Vectorizer("text2vec-voyageai")]
@@ -1444,7 +1444,7 @@ public static class Vectorizer
         /// <summary>
         /// Gets or sets the value of the base url
         /// </summary>
-        [JsonPropertyName("baseUrl")]
+        [JsonPropertyName("baseURL")]
         public string? BaseURL { get; set; } = null;
 
         /// <summary>

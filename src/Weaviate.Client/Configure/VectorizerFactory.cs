@@ -497,7 +497,7 @@ public class VectorizerFactory
         };
 
     /// <summary>
-    /// Multis the 2 vec voyage ai using the specified image fields
+    /// Creates a configuration for the Multi2VecVoyageAI (Voyage AI by MongoDB) vectorizer using the specified image fields
     /// </summary>
     /// <param name="imageFields">The image fields</param>
     /// <param name="textFields">The text fields</param>
@@ -540,7 +540,7 @@ public class VectorizerFactory
         };
 
     /// <summary>
-    /// Multis the 2 vec voyage ai using the specified image fields
+    /// Creates a configuration for the Multi2VecVoyageAI (Voyage AI by MongoDB) vectorizer using the specified image fields
     /// </summary>
     /// <param name="imageFields">The image fields</param>
     /// <param name="textFields">The text fields</param>
@@ -1057,7 +1057,7 @@ public class VectorizerFactory
         };
 
     /// <summary>
-    /// Texts the 2 vec voyage ai using the specified base url
+    /// Creates a configuration for the Text2VecVoyageAI (Voyage AI by MongoDB) vectorizer using the specified base url
     /// </summary>
     /// <param name="baseURL">The base url</param>
     /// <param name="model">The model</param>

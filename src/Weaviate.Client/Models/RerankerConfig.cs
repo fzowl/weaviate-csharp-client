@@ -128,7 +128,7 @@ public static class Reranker
     }
 
     /// <summary>
-    /// The voyage ai
+    /// The Voyage AI by MongoDB reranker configuration
     /// </summary>
     public record VoyageAI : IRerankerConfig
     {
@@ -158,6 +158,16 @@ public static class Reranker
         /// </summary>
         public static class Models
         {
+            /// <summary>
+            /// The rerank 3
+            /// </summary>
+            public const string Rerank3 = "rerank-3";
+
+            /// <summary>
+            /// The rerank 3 lite
+            /// </summary>
+            public const string Rerank3Lite = "rerank-3-lite";
+
             /// <summary>
             /// The rerank 25
             /// </summary>
